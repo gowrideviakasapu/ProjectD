@@ -10,9 +10,9 @@ class Board{
 
         // method to display board
         void displayBoard();
-        void makeMove();
+        void makeMove(int row, int col, char sym);
         // check the player move is valid
-        bool isValidMove();
+        bool isValidMove(int row, int col);
         // check the board is full
         bool isFullBoard();
 
@@ -21,6 +21,5 @@ class Board{
         bool checkColumn(char sym);
         bool checkDiagonal(char sym);
         bool checkWin(char sym);
-
-    
+        bool checkDraw(char sym1, char sym2);
 };
