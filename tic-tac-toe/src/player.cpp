@@ -9,10 +9,10 @@ Player::Player(string name="Player X", char sym='X'){
     symbol = sym;
 }
 
-string Player::getPlayerName(){
+string Player::getPlayerName() const{
     return playerName;
 }
 
-char Player::getSymbol(){
+char Player::getSymbol() const{
     return symbol;
 }

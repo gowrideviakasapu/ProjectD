@@ -31,14 +31,14 @@ void  Board::makeMove(int row, int col, char sym){
 }
 
 bool Board::isValidMove(int row, int col){
-    if(row>=0 && row<3 && col>=0 && col<3 && grid[row][col] = ' '){
+    if(row>=0 && row<3 && col>=0 && col<3 && grid[row][col] == ' '){
         return true;
     }
     return false;
 }
 
 bool Board::isFullBoard(){
-    retrun filledCells == 9;
+    return filledCells == 9;
 }
 
 bool Board::checkRow(char sym){
@@ -47,6 +47,7 @@ bool Board::checkRow(char sym){
             return true;
         }
     }
+    return false;
 }
 
 bool Board::checkColumn(char sym){
@@ -55,17 +56,28 @@ bool Board::checkColumn(char sym){
             return true;
         }
     }
+    return false;
 }
 
 bool Board::checkDiagonal(char sym){
+    // check top-left to the bottom-right diagonal
     if(grid[0][0] == sym && grid[1][1] == sym && grid[2][2]== sym){
-        retrun true;
-    }
-}
-
-bool board::checkWin(char sym){
-    if(checkRow() || checkColumn() || checkDiagonal()){
         return true;
     }
-    return false
+    // check top-right to the bottom-left diagonal
+    if(grid[0][2] == sym && grid[1][1] == sym && grid[2][0] == sym){
+        return true;
+    }
+    return false;
+}
+
+bool Board::checkWin(char sym){
+    if(checkRow(sym) || checkColumn(sym) || checkDiagonal(sym)){
+        return true;
+    }
+    return false;
+}
+
+bool Board::checkDraw(char sym1, char sym2){
+    return isFullBoard() && !checkWin(sym1) && !checkWin(sym2);
 }

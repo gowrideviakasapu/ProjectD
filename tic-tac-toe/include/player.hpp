@@ -9,6 +9,6 @@ class Player{
 
     public:
         Player(string name, char sym);
-        string getPlayerName();
-        char getSymbol();
+        string getPlayerName() const;
+        char getSymbol() const;
 };
