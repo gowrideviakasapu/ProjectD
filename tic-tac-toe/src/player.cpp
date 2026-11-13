@@ -4,7 +4,7 @@
 using namespace std;
 
 
-Player::Player(string name="Player X", char sym='X'){
+Player::Player(string name, char sym){
     playerName = name;
     symbol = sym;
 }

@@ -1,14 +1,17 @@
-#include<iostream>
-#include<string>
-using namespace std;
+#ifndef PLAYER_HPP
+#define PLAYER_HPP
 
-class Player{
-    private:
-        string playerName;
-        char symbol;
+#include <string>
 
-    public:
-        Player(string name, char sym);
-        string getPlayerName() const;
-        char getSymbol() const;
+class Player {
+private:
+    std::string playerName;
+    char symbol;
+
+public:
+    Player(std::string name = "Player X", char sym = 'X');
+    std::string getPlayerName() const;
+    char getSymbol() const;
 };
+
+#endif
