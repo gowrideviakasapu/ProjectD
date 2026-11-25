@@ -48,8 +48,11 @@ int main() {
                 }
             } else {
                 cout << "Computer's Turn: Symbol - " << computer.getSymbol() << endl;
-                if (!computer.stopPlayerWin(human.getSymbol())) {
-                    computer.normalMove(computer.getSymbol());
+                // First check for computer Win and then stop the player win
+                if (!computer.stopPlayerWin(computer.getSymbol())) {
+                    if(!computer.stopPlayerWin(human.getSymbol())){
+                        computer.normalMove(computer.getSymbol());
+                    }
                 }
             }
 
