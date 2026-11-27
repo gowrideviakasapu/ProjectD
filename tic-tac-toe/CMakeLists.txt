@@ -12,7 +12,5 @@ add_executable(TicTocToeProject
 )
 target_include_directories(TicTocToeProject PRIVATE inc)
 
-# set_property(TARGET TicTocToeProject PROPERTY CXX_STANDARD 17)
-
 include(CTest)
 enable_testing()
